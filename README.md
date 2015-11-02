@@ -4,7 +4,7 @@ Donate link:       https://pascalbirchler.com
 Tags:              embed, embeds, oembed  
 Requires at least: 4.4-trunk  
 Tested up to:      4.4  
-Stable tag:        1.0.0  
+Stable tag:        trunk  
 License:           GPLv2 or later  
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -16,7 +16,7 @@ What this plugin does:
 
 * Prevents others from embedding your site.
 * Prevents you from embedding other non-whitelisted sites.
-* Disables all JavaScript
+* Disables all JavaScript related to the feature.
 
 Just activate the plugin and you’re good to go.
 
@@ -45,10 +45,16 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 
 ## Changelog ##
 
+### 1.1.0 ###
+* Updated against 4.4 Beta 2.
+
 ### 1.0.0 ###
 * Initial release.
 
 ## Upgrade Notice ##
+
+### 1.1.0 ###
+Updated against 4.4 Beta 2.
 
 ### 1.0.0 ###
 Initial release.
