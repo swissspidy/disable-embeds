@@ -45,16 +45,23 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 
 ## Changelog ##
 
+### 1.2.0 ###
+* Updated against WordPress 4.4 Beta 3.
+* Removes all embeds rewrite rules on plugin activation.
+
 ### 1.1.0 ###
-* Updated against 4.4 Beta 2.
+* Updated against WordPress 4.4 Beta 2.
 
 ### 1.0.0 ###
 * Initial release.
 
 ## Upgrade Notice ##
 
+### 1.2.0 ###
+Now removes all embeds rewrite rules on plugin activation.
+
 ### 1.1.0 ###
-Updated against 4.4 Beta 2.
+Updated against WordPress 4.4 Beta 2.
 
 ### 1.0.0 ###
 Initial release.
