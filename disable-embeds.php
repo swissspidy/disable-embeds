@@ -80,6 +80,26 @@ function disable_embeds_rewrites( $rules ) {
 	return $rules;
 }
 
-// Flush rewrite rules on plugin activation and deactivation.
-register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
-register_activation_hook( __FILE__, 'flush_rewrite_rules' );
+/**
+ * Remove embeds rewrite rules on plugin activation.
+ *
+ * @since 1.2.0
+ */
+function disable_embeds_remove_rewrite_rules() {
+	add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+	flush_rewrite_rules();
+}
+
+register_activation_hook( __FILE__, 'disable_embeds_remove_rewrite_rules' );
+
+/**
+ * Flush rewrite rules on plugin deactivation.
+ *
+ * @since 1.2.0
+ */
+function disable_embeds_flush_rewrite_rules() {
+	remove_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+	flush_rewrite_rules();
+}
+
+register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
