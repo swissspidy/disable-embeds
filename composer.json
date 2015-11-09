@@ -1,7 +1,7 @@
 {
   "name": "swissspidy/disable-embeds",
   "description": "Don't like the enhanced embeds in WordPress 4.4? Easily disable the feature using this plugin.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "wordpress-plugin",
   "license": "GPL-2.0+"
 }
