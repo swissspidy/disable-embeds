@@ -90,7 +90,7 @@ function disable_embeds_rewrites( $rules ) {
  */
 function disable_embeds_remove_rewrite_rules() {
 	add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
-	flush_rewrite_rules();
+	flush_rewrite_rules( false );
 }
 
 register_activation_hook( __FILE__, 'disable_embeds_remove_rewrite_rules' );
@@ -102,7 +102,7 @@ register_activation_hook( __FILE__, 'disable_embeds_remove_rewrite_rules' );
  */
 function disable_embeds_flush_rewrite_rules() {
 	remove_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
-	flush_rewrite_rules();
+	flush_rewrite_rules( false );
 }
 
 register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
