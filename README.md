@@ -3,7 +3,7 @@ Contributors:      swissspidy
 Donate link:       https://pascalbirchler.com  
 Tags:              embed, embeds, oembed  
 Requires at least: 4.4  
-Tested up to:      4.5  
+Tested up to:      4.6  
 Stable tag:        trunk  
 License:           GPLv2 or later  
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
@@ -45,6 +45,10 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 
 ## Changelog ##
 
+### 1.3.0 ###
+* Updated against WordPress 4.6 Beta 2
+* Removes a new embeds filter introduced in WordPress 4.5.3
+
 ### 1.2.0 ###
 * Updated against WordPress 4.4 Beta 3.
 * Removes all embeds rewrite rules on plugin activation.
@@ -56,6 +60,9 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 * Initial release.
 
 ## Upgrade Notice ##
+
+### 1.3.0 ###
+Removes a new embeds filter that was added in WordPress 4.5.3
 
 ### 1.2.0 ###
 Now removes all embeds rewrite rules on plugin activation.
