@@ -16,6 +16,7 @@
  * - Removes the needed query vars.
  * - Disables oEmbed discovery.
  * - Completely removes the related JavaScript.
+ * - Disables the core-embed/wordpress block type (WordPress 5.0+)
  *
  * @since 1.0.0
  */
@@ -49,6 +50,9 @@ function disable_embeds_init() {
 
 	// Remove filter of the oEmbed result before any HTTP requests are made.
 	remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
+
+	// Load block editor JavaScript.
+	add_action( 'enqueue_block_editor_assets', 'disable_embeds_enqueue_block_editor_assets' );
 }
 
 add_action( 'init', 'disable_embeds_init', 9999 );
@@ -106,3 +110,20 @@ function disable_embeds_flush_rewrite_rules() {
 }
 
 register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
+
+/**
+ * Enqueues JavaScript for the block editor.
+ *
+ * This is used to unregister the `core-embed/wordpress` block type.
+ */
+function disable_embeds_enqueue_block_editor_assets() {
+	wp_enqueue_script(
+		'disable-embeds-editor',
+		plugins_url( 'js/editor.js', dirname( __FILE__ ) ),
+		array(
+			'wp-editor',
+		),
+		'20181023',
+		true
+	);
+}
