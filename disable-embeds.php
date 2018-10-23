@@ -29,8 +29,11 @@ function disable_embeds_init() {
 		'embed',
 	) );
 
-	// Remove the REST API endpoint.
-	remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+	// Remove the oembed/1.0/embed REST route.
+	add_filter( 'rest_endpoints', 'disable_embeds_remove_embed_endpoint' );
+
+	// Disable handling of internal embeds in oembed/1.0/proxy REST route.
+	add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data' );
 
 	// Turn off oEmbed auto discovery.
 	add_filter( 'embed_oembed_discover', '__return_false' );
@@ -110,6 +113,32 @@ function disable_embeds_flush_rewrite_rules() {
 }
 
 register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
+
+/**
+ * Removes the oembed/1.0/embed REST route.
+ *
+ * @param array $endpoints Registered REST API endpoints.
+ * @return array Filtered REST API endpoints.
+ */
+function disable_embeds_remove_embed_endpoint( $endpoints ) {
+	unset( $endpoints['/oembed/1.0/embed'] );
+
+	return $endpoints;
+}
+
+/**
+ * Disables sending internal oEmbed response data in proxy endpoint.
+ *
+ * @param array $data The response data.
+ * @return array|false Response data or false if in a REST API context.
+ */
+function disable_embeds_filter_oembed_response_data( $data ) {
+	if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+		return false;
+	}
+
+	return $data;
+}
 
 /**
  * Enqueues JavaScript for the block editor.
