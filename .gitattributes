@@ -1,0 +1,8 @@
+/.distignore export-ignore
+/.editorconfig export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.package.json export-ignore
+/.package-lock.json export-ignore
+/.readme.txt export-ignore
+/webpack.config.js export-ignore
