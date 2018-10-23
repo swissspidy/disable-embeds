@@ -1,4 +1,11 @@
-README.md
+.distignore
+.editorconfig
+.gitignore
 CHANGELOG.md
+composer.json
+package.json
+package-lock.json
+README.md
+webpack.config.js
 vendor/
 composer.lock
