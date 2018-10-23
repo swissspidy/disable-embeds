@@ -1,16 +1,8 @@
-# Disable Embeds #
-Contributors:      swissspidy  
-Donate link:       https://pascalbirchler.com  
-Tags:              embed, embeds, oembed  
-Requires at least: 4.4  
-Tested up to:      4.9  
-Stable tag:        trunk  
-License:           GPLv2 or later  
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
+# Disable Embeds
 
-Don’t like the enhanced embeds in WordPress 4.4? Easily disable the feature using this plugin.
+WordPress plugin that disables the feature to embed WordPress posts from your site and others.
 
-## Description ##
+If you don't like the enhanced embeds that were introduced in WordPress 4.4 you can disable the feature using this plugin.
 
 What this plugin does:
 
@@ -21,54 +13,3 @@ What this plugin does:
 Just activate the plugin and you’re good to go.
 
 Want embeds back again? Simply deactivate the plugin.
-
-## Installation ##
-
-### Manual Installation ###
-
-1. Upload the entire `/disable-embeds` directory to the `/wp-content/plugins/` directory.
-2. Activate Disable Embeds through the 'Plugins' menu in WordPress.
-
-## Frequently Asked Questions ##
-
-### Is it really that easy? ###
-
-Yes.
-
-### What about previous embeds? ###
-
-Since WordPress caches all embed codes, previous embeds from other sites will still work. However, your own site’s embeds won’t work at all when using this plugin.
-
-## Screenshots ##
-
-Sorry, there are no screenshots for this plugin! Everything is done behind the scenes.
-
-## Changelog ##
-
-### 1.3.0 ###
-* Updated against WordPress 4.6 Beta 2
-* Removes a new embeds filter introduced in WordPress 4.5.3
-
-### 1.2.0 ###
-* Updated against WordPress 4.4 Beta 3.
-* Removes all embeds rewrite rules on plugin activation.
-
-### 1.1.0 ###
-* Updated against WordPress 4.4 Beta 2.
-
-### 1.0.0 ###
-* Initial release.
-
-## Upgrade Notice ##
-
-### 1.3.0 ###
-Removes a new embeds filter that was added in WordPress 4.5.3
-
-### 1.2.0 ###
-Now removes all embeds rewrite rules on plugin activation.
-
-### 1.1.0 ###
-Updated against WordPress 4.4 Beta 2.
-
-### 1.0.0 ###
-Initial release.
