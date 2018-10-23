@@ -1,0 +1,36 @@
+{
+ "name": "disable-embeds",
+ "description": "WordPress plugin that disables the feature to embed WordPress posts from your site and others.",
+ "license": "GPL-2.0-or-later",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/swissspidy/disable-embeds.git"
+ },
+ "homepage": "https://github.com/swissspidy/disable-embeds#readme",
+ "bugs": {
+  "url": "https://github.com/swissspidy/disable-embeds/issues"
+ },
+ "engines": {
+  "node": ">=8"
+ },
+ "devDependencies": {
+  "@babel/cli": "^7.1.2",
+  "@babel/core": "^7.1.2",
+  "@babel/preset-env": "^7.1.0",
+  "@wordpress/babel-preset-default": "^3.0.1",
+  "@wordpress/blocks": "^4.0.4",
+  "babel-loader": "^8.0.4",
+  "cross-env": "^5.2.0",
+  "webpack": "^4.22.0",
+  "webpack-cli": "^3.1.2"
+ },
+  "babel": {
+	"presets": [
+	  "@wordpress/default"
+	]
+  },
+ "scripts": {
+  "build": "cross-env NODE_ENV=production webpack",
+  "dev": "cross-env BABEL_ENV=default webpack --watch"
+ }
+}
