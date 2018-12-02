@@ -28,8 +28,12 @@ wpDependencies.forEach( ( name ) => {
 	};
 } );
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
-	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+	mode: isProduction ? 'production' : 'development',
+
+	devtool: isProduction ? undefined : 'inline-source-map',
 
 	// https://webpack.js.org/configuration/entry-context/
 	entry: {
