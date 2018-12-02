@@ -3,6 +3,7 @@ const externals = {};
 // Define WordPress dependencies
 const wpDependencies = [
 	'blocks',
+	'dom-ready'
 ];
 
 /**

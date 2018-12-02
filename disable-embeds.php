@@ -56,6 +56,9 @@ function disable_embeds_init() {
 
 	// Load block editor JavaScript.
 	add_action( 'enqueue_block_editor_assets', 'disable_embeds_enqueue_block_editor_assets' );
+
+	// Remove wp-embed dependency of wp-edit-post script handle.
+	add_action( 'wp_default_scripts', 'disable_embeds_remove_script_dependencies' );
 }
 
 add_action( 'init', 'disable_embeds_init', 9999 );
@@ -117,6 +120,8 @@ register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
 /**
  * Removes the oembed/1.0/embed REST route.
  *
+ * @since 1.4.0
+ *
  * @param array $endpoints Registered REST API endpoints.
  * @return array Filtered REST API endpoints.
  */
@@ -128,6 +133,8 @@ function disable_embeds_remove_embed_endpoint( $endpoints ) {
 
 /**
  * Disables sending internal oEmbed response data in proxy endpoint.
+ *
+ * @since 1.4.0
  *
  * @param array $data The response data.
  * @return array|false Response data or false if in a REST API context.
@@ -143,6 +150,8 @@ function disable_embeds_filter_oembed_response_data( $data ) {
 /**
  * Enqueues JavaScript for the block editor.
  *
+ * @since 1.4.0
+ *
  * This is used to unregister the `core-embed/wordpress` block type.
  */
 function disable_embeds_enqueue_block_editor_assets() {
@@ -151,8 +160,25 @@ function disable_embeds_enqueue_block_editor_assets() {
 		plugins_url( 'js/editor.js', dirname( __FILE__ ) ),
 		array(
 			'wp-editor',
+			'wp-dom',
 		),
-		'20181023',
+		'20181202',
 		true
 	);
+}
+
+/**
+ * Removes wp-embed dependency of core packages.
+ *
+ * @since 1.4.0
+ *
+ * @param \WP_Scripts $scripts WP_Scripts instance, passed by reference.
+ */
+function disable_embeds_remove_script_dependencies( $scripts ) {
+	if ( ! empty( $scripts->registered['wp-edit-post'] ) ) {
+		$scripts->registered['wp-edit-post']->deps = array_diff(
+			$scripts->registered['wp-edit-post']->deps,
+			array( 'wp-embed' )
+		);
+	}
 }
