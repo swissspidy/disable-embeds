@@ -156,9 +156,10 @@ function disable_embeds_filter_oembed_response_data( $data ) {
  */
 function disable_embeds_enqueue_block_editor_assets() {
 	wp_enqueue_script(
-		'disable-embeds-editor',
-		plugins_url( 'js/editor.js', dirname( __FILE__ ) ),
+		'disable-embeds',
+		plugins_url( 'js/editor.js', __FILE__ ),
 		array(
+			'wp-edit-post',
 			'wp-editor',
 			'wp-dom',
 		),
