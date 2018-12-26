@@ -1,12 +1,12 @@
 # Disable Embeds #
-Contributors:      swissspidy  
-Donate link:       https://pascalbirchler.com  
-Tags:              embed, embeds, oembed  
-Requires at least: 4.4  
-Tested up to:      4.9  
-Stable tag:        trunk  
-License:           GPLv2 or later  
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
+Contributors:      swissspidy
+Donate link:       https://pascalbirchler.com
+Tags:              embed, embeds, oembed
+Requires at least: 4.4
+Tested up to:      5.0
+Stable tag:        1.4.0
+License:           GPLv2 or later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
 Don’t like the enhanced embeds in WordPress 4.4? Easily disable the feature using this plugin.
 
@@ -17,6 +17,7 @@ What this plugin does:
 * Prevents others from embedding your site.
 * Prevents you from embedding other non-whitelisted sites.
 * Disables all JavaScript related to the feature.
+* Removes support for the WordPress embed block in the new block editor.
 
 Just activate the plugin and you’re good to go.
 
@@ -45,6 +46,9 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 
 ## Changelog ##
 
+### 1.4.0 ###
+* Updated against WordPress 5.0
+
 ### 1.3.0 ###
 * Updated against WordPress 4.6 Beta 2
 * Removes a new embeds filter introduced in WordPress 4.5.3
@@ -60,6 +64,9 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 * Initial release.
 
 ## Upgrade Notice ##
+
+### 1.4.0 ###
+Adds support for WordPress 5.0 and its new block editor.
 
 ### 1.3.0 ###
 Removes a new embeds filter that was added in WordPress 4.5.3
