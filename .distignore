@@ -1,11 +1,14 @@
 .distignore
 .editorconfig
+.gitattributes
 .gitignore
 CHANGELOG.md
 composer.json
+composer.lock
 package.json
 package-lock.json
 README.md
 webpack.config.js
+js/src
+node_modules/
 vendor/
-composer.lock
