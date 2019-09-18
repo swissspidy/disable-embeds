@@ -23,7 +23,7 @@
   "babel-loader": "^8.0.6",
   "cross-env": "^6.0.0",
   "webpack": "^4.40.2",
-  "webpack-cli": "^3.3.8"
+  "webpack-cli": "^3.3.9"
  },
  "babel": {
   "presets": [
