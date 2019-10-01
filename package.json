@@ -21,7 +21,7 @@
   "@wordpress/blocks": "^6.7.1",
   "@wordpress/dom-ready": "^2.5.0",
   "babel-loader": "^8.0.6",
-  "cross-env": "^6.0.0",
+  "cross-env": "^6.0.2",
   "webpack": "^4.41.0",
   "webpack-cli": "^3.3.9"
  },
