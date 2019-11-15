@@ -18,7 +18,7 @@
   "@babel/core": "^7.7.2",
   "@babel/preset-env": "^7.7.1",
   "@wordpress/babel-preset-default": "^4.6.2",
-  "@wordpress/blocks": "^6.7.2",
+  "@wordpress/blocks": "^6.8.0",
   "@wordpress/dom-ready": "^2.5.1",
   "babel-loader": "^8.0.6",
   "cross-env": "^6.0.3",
