@@ -20,7 +20,7 @@
   "@wordpress/babel-preset-default": "^4.19.0",
   "@wordpress/blocks": "^6.24.1",
   "@wordpress/dom-ready": "^2.11.0",
-  "babel-loader": "^8.1.0",
+  "babel-loader": "^8.2.1",
   "cross-env": "^7.0.2",
   "webpack": "^4.44.2",
   "webpack-cli": "^3.3.12"
