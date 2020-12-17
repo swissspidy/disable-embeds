@@ -17,7 +17,7 @@
   "@babel/cli": "^7.12.10",
   "@babel/core": "^7.12.10",
   "@babel/preset-env": "^7.12.11",
-  "@wordpress/babel-preset-default": "^4.19.0",
+  "@wordpress/babel-preset-default": "^4.20.0",
   "@wordpress/blocks": "^6.24.2",
   "@wordpress/dom-ready": "^2.11.0",
   "babel-loader": "^8.2.2",
