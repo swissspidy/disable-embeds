@@ -155,15 +155,17 @@ function disable_embeds_filter_oembed_response_data( $data ) {
  * This is used to unregister the `core-embed/wordpress` block type.
  */
 function disable_embeds_enqueue_block_editor_assets() {
+	$asset_file  = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	$asset       = is_readable( $asset_file ) ? require $asset_file : [];
+
+	$asset['dependencies'] = isset( $asset['dependencies'] ) ? $asset['dependencies'] : [];
+	$asset['version'] = isset( $asset['version'] ) ? $asset['version'] : '';
+
 	wp_enqueue_script(
 		'disable-embeds',
-		plugins_url( 'js/editor.js', __FILE__ ),
-		array(
-			'wp-edit-post',
-			'wp-editor',
-			'wp-dom',
-		),
-		'20181202',
+		plugins_url( 'js/index.js', __FILE__ ),
+		$asset['dependencies'],
+		$asset['version'],
 		true
 	);
 }

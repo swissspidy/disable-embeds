@@ -13,25 +13,18 @@
  "engines": {
   "node": ">=8"
  },
- "devDependencies": {
-  "@babel/cli": "^7.13.0",
-  "@babel/core": "^7.13.8",
-  "@babel/preset-env": "^7.13.9",
-  "@wordpress/babel-preset-default": "^4.20.0",
+ "dependencies": {
   "@wordpress/blocks": "^7.0.6",
-  "@wordpress/dom-ready": "^2.12.1",
-  "babel-loader": "^8.2.2",
-  "cross-env": "^7.0.3",
-  "webpack": "^4.46.0",
+  "@wordpress/dom-ready": "^2.12.1"
+ },
+ "devDependencies": {
+  "@wordpress/scripts": "^13.0.3",
   "webpack-cli": "^4.5.0"
  },
- "babel": {
-  "presets": [
-   "@wordpress/default"
-  ]
- },
  "scripts": {
-  "build": "cross-env NODE_ENV=production webpack",
-  "dev": "cross-env BABEL_ENV=default webpack --watch"
+  "build": "wp-scripts build",
+  "format:js": "wp-scripts format-js",
+  "lint:js": "wp-scripts lint-js",
+  "start": "wp-scripts start"
  }
 }

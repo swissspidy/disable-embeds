@@ -9,6 +9,6 @@ package.json
 package-lock.json
 README.md
 webpack.config.js
-js/src
+build/
 node_modules/
 vendor/
