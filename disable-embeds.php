@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Disable Embeds
  * Description: Don't like the enhanced embeds in WordPress 4.4? Easily disable the feature using this plugin.
- * Version:     1.4.0
+ * Version:     1.5.0
  * Author:      Pascal Birchler
  * Author URI:  https://pascalbirchler.com
  * License:     GPLv2+
@@ -163,7 +163,7 @@ function disable_embeds_enqueue_block_editor_assets() {
 
 	wp_enqueue_script(
 		'disable-embeds',
-		plugins_url( 'js/index.js', __FILE__ ),
+		plugins_url( 'build/index.js', __FILE__ ),
 		$asset['dependencies'],
 		$asset['version'],
 		true
@@ -175,7 +175,7 @@ function disable_embeds_enqueue_block_editor_assets() {
  *
  * @since 1.4.0
  *
- * @param \WP_Scripts $scripts WP_Scripts instance, passed by reference.
+ * @param WP_Scripts $scripts WP_Scripts instance, passed by reference.
  */
 function disable_embeds_remove_script_dependencies( $scripts ) {
 	if ( ! empty( $scripts->registered['wp-edit-post'] ) ) {

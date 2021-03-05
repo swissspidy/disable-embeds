@@ -3,8 +3,8 @@ Contributors:      swissspidy
 Donate link:       https://pascalbirchler.com
 Tags:              embed, embeds, oembed
 Requires at least: 4.4
-Tested up to:      5.5
-Stable tag:        1.4.0
+Tested up to:      5.7
+Stable tag:        1.5.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,10 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 
 ## Changelog ##
 
+### 1.5.0 ###
+
+* Updated against WordPress 5.7
+
 ### 1.4.0 ###
 * Updated against WordPress 5.0
 
@@ -65,13 +69,16 @@ Sorry, there are no screenshots for this plugin! Everything is done behind the s
 
 ## Upgrade Notice ##
 
+### 1.5.0 ###
+Updated against WordPress 5.7 to correctly remove block style variations.
+
 ### 1.4.0 ###
 Adds support for WordPress 5.0 and its new block editor.
 
 ### 1.3.0 ###
 Removes a new embeds filter that was added in WordPress 4.5.3
 
-### 1.2.0 ###
+### 1.2.0 ###
 Now removes all embeds rewrite rules on plugin activation.
 
 ### 1.1.0 ###
