@@ -19,7 +19,7 @@
  },
  "devDependencies": {
   "@wordpress/scripts": "^24.4.0",
-  "webpack-cli": "^4.6.0"
+  "webpack-cli": "^5.0.0"
  },
  "scripts": {
   "build": "wp-scripts build",
