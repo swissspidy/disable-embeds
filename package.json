@@ -18,7 +18,7 @@
   "@wordpress/dom-ready": "^3.28.0"
  },
  "devDependencies": {
-  "@wordpress/scripts": "^25.5.0",
+  "@wordpress/scripts": "^25.5.1",
   "webpack-cli": "^5.0.1"
  },
  "scripts": {
