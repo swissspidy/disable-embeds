@@ -14,7 +14,7 @@
   "node": ">=8"
  },
  "dependencies": {
-  "@wordpress/blocks": "^14.1.0",
+  "@wordpress/blocks": "^14.2.0",
   "@wordpress/dom-ready": "^4.13.0"
  },
  "devDependencies": {
