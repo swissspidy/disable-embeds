@@ -15,7 +15,7 @@
  },
  "dependencies": {
   "@wordpress/blocks": "^14.13.0",
-  "@wordpress/dom-ready": "^4.24.0"
+  "@wordpress/dom-ready": "^4.25.0"
  },
  "devDependencies": {
   "@wordpress/scripts": "^30.17.0",
