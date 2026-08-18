@@ -17,7 +17,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v7
       with:
-        node-version: 22
+        node-version-file: '.nvmrc'
         cache: npm
 
     - name: Install dependencies
@@ -25,6 +25,9 @@ jobs:
 
     - name: Lint JS
       run: npm run lint:js
+
+    - name: Check types
+      run: npm run lint:types
 
   lint-php:
     name: PHP Lints
@@ -42,10 +45,10 @@ jobs:
 
     - name: Get Composer cache directory
       id: composer-cache
-      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
     - name: Setup Composer cache
-      uses: pat-s/always-upload-cache@v3.0.11
+      uses: actions/cache@v4
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
