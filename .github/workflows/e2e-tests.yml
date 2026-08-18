@@ -1,0 +1,66 @@
+name: E2E Tests
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  e2e-tests:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v7
+
+    - name: Setup Node
+      uses: actions/setup-node@v7
+      with:
+        node-version-file: '.nvmrc'
+        cache: npm
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps chromium
+
+    - name: Build plugin
+      run: npm run build
+      env:
+        # Source maps are needed to map coverage back onto the original sources.
+        WP_DEVTOOL: source-map
+
+    # The Playground runtime runs WordPress in WebAssembly, so no Docker
+    # container needs to be spun up. The environment itself is started on
+    # demand by the Playwright `webServer` configuration.
+    - name: Run tests
+      run: npm run test:e2e
+      env:
+        COLLECT_COVERAGE: true
+        PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: true
+
+    - name: Upload code coverage report
+      uses: codecov/codecov-action@v7.0.0
+      if: always()
+      with:
+        files: artifacts/e2e-coverage/coverage/codecov.json
+        flags: e2e
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Archive debug artifacts (screenshots, traces)
+      uses: actions/upload-artifact@v7
+      if: always()
+      with:
+        name: failures-artifacts
+        path: artifacts
+        if-no-files-found: ignore

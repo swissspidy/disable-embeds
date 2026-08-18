@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Disable Embeds
  * Description: Don't like the enhanced embeds in WordPress 4.4? Easily disable the feature using this plugin.
- * Version:     1.5.0
+ * Version:     1.6.0
  * Author:      Pascal Birchler
  * Author URI:  https://pascalbirchler.com
  * License:     GPLv2+
