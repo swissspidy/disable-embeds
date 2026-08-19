@@ -1,10 +1,14 @@
 .distignore
 .editorconfig
+.git/
 .gitattributes
+.github/
 .gitignore
+.idea/
 .nvmrc
 .prettierignore
 .wp-env.json
+.wp-env.override.json
 CHANGELOG.md
 README.md
 artifacts/
@@ -15,6 +19,7 @@ eslint.config.cjs
 node_modules/
 package.json
 package-lock.json
+src/
 tests/
 tsconfig.json
 vendor/
