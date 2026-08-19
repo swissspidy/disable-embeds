@@ -6,6 +6,15 @@ on:
     - main
   pull_request:
 
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   lint-js:
     name: JS Lints
@@ -43,18 +52,13 @@ jobs:
         coverage: none
         tools: composer, cs2pr
 
-    - name: Get Composer cache directory
-      id: composer-cache
-      run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
-
-    - name: Setup Composer cache
-      uses: actions/cache@v4
-      with:
-        path: ${{ steps.composer-cache.outputs.dir }}
-        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-composer-
-          ${{ runner.os }}-
-
     - name: Validate composer.json
       run: composer validate --no-check-all --strict
+
+    - name: Install PHP dependencies
+      uses: ramsey/composer-install@v4
+      with:
+        composer-options: '--prefer-dist --no-progress --no-interaction --no-scripts'
+
+    - name: Lint PHP
+      run: composer lint

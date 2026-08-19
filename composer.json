@@ -6,9 +6,23 @@
 	"require": {
 		"php": ">=5.2"
 	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.0",
+		"wp-coding-standards/wpcs": "^3.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
 	"extra": {
 		"branch-alias": {
 			"dev-master": "1.x-dev"
 		}
+	},
+	"scripts": {
+		"format": "vendor/bin/phpcbf --report-summary --report-source .",
+		"lint": "vendor/bin/phpcs --report-summary --report-source ."
 	}
 }
