@@ -19,6 +19,7 @@ eslint.config.cjs
 node_modules/
 package.json
 package-lock.json
+phpcs.xml.dist
 src/
 tests/
 tsconfig.json

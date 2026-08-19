@@ -25,9 +25,12 @@ function disable_embeds_init() {
 	global $wp;
 
 	// Remove the embed query var.
-	$wp->public_query_vars = array_diff( $wp->public_query_vars, array(
-		'embed',
-	) );
+	$wp->public_query_vars = array_diff(
+		$wp->public_query_vars,
+		array(
+			'embed',
+		)
+	);
 
 	// Remove the oembed/1.0/embed REST route.
 	add_filter( 'rest_endpoints', 'disable_embeds_remove_embed_endpoint' );
@@ -155,11 +158,11 @@ function disable_embeds_filter_oembed_response_data( $data ) {
  * This is used to unregister the `core-embed/wordpress` block type.
  */
 function disable_embeds_enqueue_block_editor_assets() {
-	$asset_file  = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
-	$asset       = is_readable( $asset_file ) ? require $asset_file : [];
+	$asset_file = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	$asset      = is_readable( $asset_file ) ? require $asset_file : array();
 
-	$asset['dependencies'] = isset( $asset['dependencies'] ) ? $asset['dependencies'] : [];
-	$asset['version'] = isset( $asset['version'] ) ? $asset['version'] : '';
+	$asset['dependencies'] = isset( $asset['dependencies'] ) ? $asset['dependencies'] : array();
+	$asset['version']      = isset( $asset['version'] ) ? $asset['version'] : '';
 
 	wp_enqueue_script(
 		'disable-embeds',
