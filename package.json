@@ -22,7 +22,7 @@
 		"@wordpress/e2e-test-utils-playwright": "^1.53.0",
 		"@wordpress/env": "^11.13.0",
 		"@wordpress/scripts": "^34.1.0",
-		"monocart-reporter": "^2.12.5",
+		"monocart-reporter": "^2.12.6",
 		"typescript": "^6.0.3",
 		"webpack-cli": "^7.2.2"
 	},
