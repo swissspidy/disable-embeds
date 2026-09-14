@@ -23,7 +23,7 @@
 		"@wordpress/env": "^11.15.0",
 		"@wordpress/scripts": "^34.2.0",
 		"monocart-reporter": "^2.13.1",
-		"typescript": "^6.0.3",
+		"typescript": "^7.0.2",
 		"webpack-cli": "^7.2.3"
 	},
 	"scripts": {
