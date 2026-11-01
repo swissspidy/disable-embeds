@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@wordpress/blocks": "^16.2.0",
-		"@wordpress/dom-ready": "^4.57.0"
+		"@wordpress/dom-ready": "^5.0.0"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.64.1",
