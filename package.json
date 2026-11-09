@@ -24,7 +24,7 @@
 		"@wordpress/scripts": "^34.2.0",
 		"monocart-reporter": "^2.15.1",
 		"typescript": "^6.0.3",
-		"webpack-cli": "^7.2.3"
+		"webpack-cli": "^7.3.1"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
